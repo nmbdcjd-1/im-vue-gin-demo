@@ -54,12 +54,29 @@ import { Search, Smile, Image, Mic } from 'lucide-vue-next'
 
 const inputMsg = ref('')
 const messages = reactive([
-  { content: 'Welcome back! 喵~', self: false, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=AA' },
-  { content: 'Hello AA!', self: true, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=1' }
+  { content: 'Welcome back! 喵~', self: false, avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=AA' }
 ])
+
+// WebSocket 连接
+const socket = new WebSocket('ws://' + window.location.hostname + ':8080/ws')
+
+socket.onmessage = (event) => {
+  const msg = JSON.parse(event.data)
+  messages.push({
+    content: msg.content,
+    self: false,
+    avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=AA'
+  })
+}
 
 const sendMsg = () => {
   if (!inputMsg.value.trim()) return
+  const msgPayload = {
+    content: inputMsg.value,
+    from_user_id: 1, // 演示用
+  }
+  socket.send(JSON.stringify(msgPayload))
+  
   messages.push({
     content: inputMsg.value,
     self: true,

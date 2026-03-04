@@ -125,6 +125,8 @@ func main() {
 	{
 		api.POST("/register", handlers.Register)
 		api.POST("/login", handlers.Login)
+		api.POST("/friend/add", handlers.AddFriend)
+		api.GET("/friends", handlers.GetFriends)
 	}
 
 	r.GET("/ws", handleWebSocket)

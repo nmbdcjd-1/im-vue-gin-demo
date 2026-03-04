@@ -16,3 +16,7 @@
 [GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
 Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
 [GIN-debug] Listening and serving HTTP on :8080
+[GIN] 2026/03/04 - 14:11:23 | 404 |      10.125µs | 149.154.161.198 | GET      "/"
+[GIN] 2026/03/04 - 14:11:24 | 404 |      25.957µs | 149.154.161.204 | GET      "/"
+[GIN] 2026/03/04 - 14:12:45 | 404 |       8.374µs | 2604:2dc0:100:50d4::1774 | GET      "/"
+[GIN] 2026/03/04 - 14:12:46 | 404 |           5µs | 2604:2dc0:100:50d4::1774 | GET      "/favicon.ico"
