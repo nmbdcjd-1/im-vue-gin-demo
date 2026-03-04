@@ -5,10 +5,9 @@ import (
 	"log"
 	"net/http"
 	"sync"
-	"time"
 
-	"im-vue-gin-demo/backend/handlers"
-	"im-vue-gin-demo/backend/models"
+	"im-backend/handlers"
+	"im-backend/models"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-redis/redis/v8"

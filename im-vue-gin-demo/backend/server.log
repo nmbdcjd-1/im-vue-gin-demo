@@ -1,0 +1,18 @@
+2026/03/04 14:09:16 MySQL connected
+
+2026/03/04 14:09:16 [31;1m/root/.openclaw/workspace/im-vue-gin-demo/backend/main.go:51 [35;1mError 1170 (42000): BLOB/TEXT column 'email' used in key specification without a key length
+[0m[33m[12.729ms] [34;1m[rows:0][0m CREATE TABLE `users` (`id` bigint unsigned AUTO_INCREMENT,`created_at` datetime(3) NULL,`updated_at` datetime(3) NULL,`deleted_at` datetime(3) NULL,`email` longtext NOT NULL,`password` longtext NOT NULL,`nickname` longtext,`avatar` longtext,`is_active` boolean DEFAULT false,PRIMARY KEY (`id`),INDEX `idx_users_deleted_at` (`deleted_at`),UNIQUE INDEX `idx_users_email` (`email`))
+2026/03/04 14:09:16 Redis connected
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /api/register             --> im-backend/handlers.Register (4 handlers)
+[GIN-debug] POST   /api/login                --> im-backend/handlers.Login (4 handlers)
+[GIN-debug] GET    /ws                       --> main.handleWebSocket (4 handlers)
+2026/03/04 14:09:16 Server starting on :8080
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :8080

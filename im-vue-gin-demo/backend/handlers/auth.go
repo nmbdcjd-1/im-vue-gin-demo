@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"im-vue-gin-demo/backend/models"
+	"im-backend/models"
 	"net/http"
 	"gorm.io/gorm"
 )
