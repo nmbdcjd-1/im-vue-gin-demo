@@ -6,7 +6,7 @@ import (
 
 type User struct {
 	gorm.Model
-	Email     string `gorm:"uniqueIndex;not null" json:"email"`
+	Email     string `gorm:"type:varchar(100);uniqueIndex;not null" json:"email"`
 	Password  string `gorm:"not null" json:"-"`
 	Nickname  string `json:"nickname"`
 	Avatar    string `json:"avatar"`
